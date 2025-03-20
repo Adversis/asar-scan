@@ -14,6 +14,12 @@ cd asar-scan
 go build -o asarscan cmd/asarscan/*.go
 
 GOOS=windows go build -o asarscan.exe cmd/asarscan/
+
+# Or build using Make
+make run  # Builds and runs immediately
+
+# Or build for all platforms
+make all  # Creates builds in the dist/ directory
 ```
 
 ## Usage
