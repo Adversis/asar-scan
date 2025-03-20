@@ -64,6 +64,7 @@ cp launcher.node /Applications/Obsidian.app/Contents/Resources/app.asar.unpacked
 ```
 
 ## Resources
+  - https://www.adversis.io/blogs/living-off-node-js-addons
   - https://www.atredis.com/blog/2025/3/7/node-is-a-loader
   - https://text.tchncs.de/ioi/backdooring-electron-applications
   - https://github.com/ctxis/beemka 
