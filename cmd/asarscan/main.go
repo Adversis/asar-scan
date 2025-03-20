@@ -11,6 +11,9 @@ import (
 	"github.com/adversis/electron-integrity/cmd/asarscan/internal"
 )
 
+// Version is set during build via ldflags
+var version = "dev"
+
 // AppResult contains the result of checking an application
 type AppResult struct {
 	Path             string   `json:"path"`
@@ -29,9 +32,16 @@ func main() {
 	outputJson := flag.Bool("json", false, "Output results in JSON format")
 	listNodeFiles := flag.Bool("node-files", true, "List .node files in Electron applications")
 	maxNodeFiles := flag.Int("max-node-files", 5, "Maximum number of .node files to list per application (0 for unlimited)")
+	showVersion := flag.Bool("version", false, "Show version information")
 	flag.Parse()
 
-	fmt.Println("Electron ASAR Integrity Scanner")
+	// Show version and exit if requested
+	if *showVersion {
+		fmt.Printf("Electron ASAR Integrity Scanner v%s\n", version)
+		os.Exit(0)
+	}
+
+	fmt.Println("Electron ASAR Integrity Scanner v" + version)
 	fmt.Println("-------------------------------")
 
 	// Check if we're running on a supported OS

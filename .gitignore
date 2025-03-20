@@ -7,6 +7,9 @@
 *.dll
 *.so
 *.dylib
+asarscan
+build/bin/*
+build/asarscan*
 
 # Test binary, built with `go test -c`
 *.test
@@ -23,5 +26,3 @@ go.work.sum
 
 # env file
 .env
-build/bin/*
-build/asarscan*
